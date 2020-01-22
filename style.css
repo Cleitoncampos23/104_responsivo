@@ -1,0 +1,107 @@
+body{
+  margin: 0;
+  display: grid;
+  grid-template-areas: 'navbar navbar navbar navbar'
+                       'header section aside div'
+                       'footer footer footer footer';
+  grid-template-rows: 20vh 70vh 40vh;
+}
+
+nav{
+  grid-area: navbar;
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+nav a{
+  color: lawngreen;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 16pt;
+  text-decoration: none;
+  transition: 2s;
+}
+
+nav a:hover{
+  color: blueviolet;
+  transition: 2s;
+}
+
+
+nav img{
+  cursor: pointer;
+  display: none;
+  border: 4px dashed pink;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+header{
+  grid-area: header;
+  background-color: limegreen;
+}
+
+section{
+  grid-area: section;
+  background-color: aquamarine;
+}
+
+aside{
+  grid-area: aside;
+  background-color: orange;
+}
+
+div{
+  grid-area: div;
+  background-color: tomato;
+}
+
+footer{
+  grid-area: footer;
+  background-color: magenta;
+}
+
+.memeGretchen{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  max-width: 90%;
+  border: 4px dotted magenta;
+  padding: 10px;
+}
+
+header, section, aside, div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+@media(max-width: 768px){
+  body{
+    grid-template-areas: 'navbar navbar navbar navbar'
+                         'header header section section'
+                         'aside aside div div'
+                         'footer footer footer footer';
+    grid-template-rows: 20vh 70vh 70vh 40vh;              
+  }
+  nav a{ 
+    display: none;
+  }
+  nav img{
+    display: block;
+  }
+}
+
+@media(max-width:425px){
+  body{
+    grid-template-areas: 'navbar navbar navbar navbar'
+                         'header header header header'
+                         'section section section section'
+                         'aside aside aside aside'
+                         'div div div div'
+                         'footer footer footer footer';
+    grid-template-rows: 20vh 70vh 70vh 70vh 70vh 40vh;
+  }
+}
